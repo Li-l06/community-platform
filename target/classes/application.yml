@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: community-qa
+
+  datasource:
+    url: jdbc:mysql://mysql:3306/community_db?useSSL=false&serverTimezone=Asia/Shanghai&connectionCollation=utf8mb4_unicode_ci&allowPublicKeyRetrieval=true
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  data:
+    redis:
+      host: redis
+      port: 6379
+
+
+server:
+  port: 8080
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+
+jwt:
+  secret: community-qa-platform-secret-key-2024-must-be-long-enough
+  expiration: 86400000   # 24 小时，单位毫秒
